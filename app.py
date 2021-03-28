@@ -5,8 +5,9 @@ app = Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
-@app.route('/sonu')
+@app.route('/about')
 def hello_sonu():
-    return 'Hello, Sonu Bhai!'
+    name="Sonu Kumar Gautam"
+    return render_template('about.html',name=name)
 
 app.run(debug=True)
