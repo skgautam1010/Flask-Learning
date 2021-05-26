@@ -3,7 +3,7 @@
   "params":
   {
     "local_server": "True",
-    "local_uri":"mysql://root:Skg@123!@localhost/flask_learning",
+    "local_uri":"mysql://root:@localhost/flask_learning",
     "prod_uri": "mysql://root:@localhost/flask_learning",
     "app_name": "Ristorante Con Fusion",
     "tag_line": "We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!"
