@@ -13,7 +13,7 @@
      <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='node_modules/bootstrap-social/bootstrap-social.css')}}">
      <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css') }}">
 
-    <title>Ristorante Con Fusion</title>
+    <title>{{params['app_name']}}</title>
 </head>
 
 <body>
@@ -22,10 +22,10 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand mr-auto" href="#"><img src="{{url_for('static',filename='img/logo.png')}}" height="30" width="41"></a>
+            <a class="navbar-brand mr-auto" href="/index.html"><img src="{{url_for('static',filename='img/logo.png')}}" height="30" width="41"></a>
             <div class="collapse navbar-collapse" id="Navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="/index.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu </a></li>
                     <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
@@ -72,18 +72,18 @@
                 </div>
                 <div class="col-12 col-sm-4 align-self-center">
                     <div class="text-center">
-                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><span class="fa fa-google-plus fa-lg"></span></a>
-                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><span class="fa fa-facebook fa-lg"></span></a>
-                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><span class="fa fa-linkedin fa-lg"></span></a>
-                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><span class="fa fa-twitter fa-lg"></span></a>
-                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><span class="fa fa-youtube fa-lg"></span></a>
-                        <a class="btn btn-social-icon" href="mailto:confusion@food.net"><span class="fa fa-envelope-o fa-lg"></span></a>
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+" target="_blank"><span class="fa fa-google-plus fa-lg"></span></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id=" target="_blank"><span class="fa fa-facebook fa-lg"></span></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/" target="_blank"><span class="fa fa-linkedin fa-lg"></span></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/" target="_blank"><span class="fa fa-twitter fa-lg"></span></a>
+                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/" target="_blank"><span class="fa fa-youtube fa-lg"></span></a>
+                        <a class="btn btn-social-icon" href="mailto:confusion@food.net" target="_blank"><span class="fa fa-envelope-o fa-lg"></span></a>
                     </div>
                 </div>
            </div>
            <div class="row justify-content-center">
                 <div class="col-auto">
-                    <p>© Copyright 2018 Ristorante Con Fusion</p>
+                    <p>© Copyright 2021 {{params['blog_name']}}</p>
                 </div>
            </div>
         </div>

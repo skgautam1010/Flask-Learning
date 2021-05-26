@@ -1,8 +1,18 @@
 from flask import Flask,render_template,request
 from flask_sqlalchemy import SQLAlchemy
 
+import json
+
+with open("config.json","r") as f:
+    params=json.load(f)["params"]
+
+localserver=True
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Skg@123!@localhost/flask_learning'
+if localserver:
+    app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = params['prod_uri']
+
 db=SQLAlchemy(app)
 
 
@@ -16,11 +26,11 @@ class Contact(db.Model):
 
 @app.route('/index.html')
 def index():
-    return render_template('index.html')
+    return render_template('index.html',params=params)
 
 @app.route('/aboutus.html')
 def aboutus():
-    return render_template('aboutus.html')
+    return render_template('aboutus.html',params=params)
 
 
 @app.route("/contactus.html",methods=['GET','POST'])
@@ -35,6 +45,6 @@ def contact():
         entry=Contact(fname=f_name,lname=l_name,contact=contactus,email=emailid,msg=feedback)
         db.session.add(entry)
         db.session.commit()
-    return render_template('contactus.html')
+    return render_template('contactus.html',params=params)
 
 app.run(debug=True)
